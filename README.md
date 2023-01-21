@@ -1,1 +1,0 @@
-# vitalymakarkin.github.io
