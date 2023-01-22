@@ -2,11 +2,26 @@
 layout: default
 ---
 
-<div class="home">
+<div>
+
   {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
   {%- endif -%}
 
   {{ content }}
+
+  {% assign posts = site.posts %}
+
+  {%- if posts.size > 0 -%}
+  <ul>
+    {%- for post in posts -%}
+    <li>
+      <a href="{{ post.url | relative_url }}">
+        {{ post.title | escape }}
+      </a>
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- endif -%}
 
 </div>
