@@ -43,8 +43,33 @@ a {
   color: $subtitle-text-color;
 }
 
-.content {
+.page-content {
   max-width: 720px;
   margin: 0 auto;
   padding: 4em 2em;
+}
+
+.content {
+  padding-top: 2em;
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-date {
+  color: #ffffff;
+  margin-right: 1em;
+}
+
+.post-link {
+  &:visited {
+    color: $link-visited-color;
+  }
+
+  &:hover {
+    color: $link-hover-color;
+  }
 }
