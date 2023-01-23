@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "ru" }}">
-
   {%- include head.html -%}
-  
   <body>
-
-    {%- include header.html -%}
-
     <main class="page-content" aria-label="Content">
-      <div>
+      <div class="content">
+        {%- include header.html -%}
         {{ content }}
       </div>
     </main>
   </body>
-
 </html>

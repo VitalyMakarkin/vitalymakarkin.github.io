@@ -1,5 +1,8 @@
 <header>
-    <div>
-        <a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-    </div>
+  <div>
+    <a href="{{ "/" | relative_url }}">
+      <span class="site-title" >{{ site.title.author | escape }}</span>
+      <span class="site-subtitle">{{ site.title.caption | escape | downcase }}</span>
+    </a>
+  </div>
 </header>

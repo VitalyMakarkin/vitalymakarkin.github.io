@@ -1,4 +1,6 @@
-title: Vitaly Makarkin Blog
+title: 
+  author: Vitaly Makarkin
+  caption: Blog
 
 plugins:
   - jekyll-feed

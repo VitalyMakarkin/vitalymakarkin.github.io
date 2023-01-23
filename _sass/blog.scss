@@ -4,7 +4,10 @@ $font-size:   16px !default;
 $text-color: #989898;
 $link-visited-color:  $text-color;
 $link-hover-color: #ffffff;
-$background-color: #1a1a1a;
+$background-color: #1f1f1f;
+
+$title-text-color: #ffffff;
+$subtitle-text-color: $text-color;
 
 html {
   font-size: $font-size;
@@ -13,6 +16,7 @@ html {
 body {
   color: $text-color;
   background-color: $background-color;
+  margin: 0;
 }
 
 a {
@@ -26,4 +30,21 @@ a {
   &:hover {
     color: $link-hover-color;
   }
+}
+
+.site-title {
+  font-size: 40px;
+  color: $title-text-color;
+  padding-right: 8px;
+}
+
+.site-subtitle {
+  font-size: 20px;
+  color: $subtitle-text-color;
+}
+
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4em 2em;
 }
