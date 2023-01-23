@@ -1,6 +1,29 @@
 @charset "utf-8";
 
-.page-content {
-    padding: 30px 0;
-    flex: 1 0 auto;
+$font-size:   16px !default;
+$text-color: #979797;
+$link-visited-color:  $text-color;
+$link-hover-color: #ffffffff;
+$background-color: #1e1e1e;
+
+html {
+  font-size: $font-size;
+}
+
+body {
+  color: $text-color;
+  background-color: $background-color;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $link-visited-color;
   }
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
