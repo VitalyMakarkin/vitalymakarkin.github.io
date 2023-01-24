@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+// Theme colors
+
+$primary-text-color: #eeeeee !default;
+$secondary-text-color: #989898 !default;
+$background-color: #111111 !default;
+
+// Theme font
+
+$font-size:   16px !default;Theme c
+
+// Default tags
+
+html {
+  font-size: $font-size;
+}
+
+body {
+  color: $primary-text-color;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $primary-text-color;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+p, h1 {
+  margin: 0;
+  padding: 0;
+}
