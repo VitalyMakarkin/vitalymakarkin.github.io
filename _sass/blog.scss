@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+$font-size:   16px !default;
+$text-color: #989898;
+$link-visited-color:  $text-color;
+$link-hover-color: #ffffff;
+$background-color: #1f1f1f;
+
+$title-text-color: #ffffff;
+$subtitle-text-color: $text-color;
+
+html {
+  font-size: $font-size;
+}
+
+body {
+  color: $text-color;
+  background-color: $background-color;
+  margin: 0;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $link-visited-color;
+  }
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+.site-title {
+  font-size: 40px;
+  color: $title-text-color;
+  padding-right: 8px;
+}
+
+.site-subtitle {
+  font-size: 20px;
+  color: $subtitle-text-color;
+}
+
+.page-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4em 2em;
+}
+
+.content {
+  padding-top: 2em;
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-list-item {
+  margin-bottom: 1em;
+}
+
+.post-date {
+  color: #ffffff;
+  margin-right: 1em;
+}
+
+.post-link {
+  &:visited {
+    color: $link-visited-color;
+  }
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
