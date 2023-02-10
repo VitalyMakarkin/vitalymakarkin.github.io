@@ -3,13 +3,12 @@ layout: default
 ---
 <article itemscope itemtype="http://schema.org/BlogPosting">
 	<header>
-		<h1 class="post-title">{{ page.title | escape }}</h1>
-        <div class="post-dt-published" datetime="{{ page.date | date_to_xmlschema }}">
-            {%- assign date_format = site.date_format | default: "%d.%m.%Y" -%}
-            {{ page.date | date: date_format }}
-        </div>
+		<h1>{{ page.title | escape }}</h1>
+			<div datetime="{{ page.date | date_to_xmlschema }}">
+				{{ page.date | date: "%d.%m.%Y" }}
+			</div>
 	</header>
-	<div class="post-content">
-        {{ content }}
-  </div>
+	<div>
+		{{ content }}
+	</div>
 </article>
