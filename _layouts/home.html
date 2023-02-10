@@ -3,10 +3,10 @@ layout: default
 ---
 {% assign posts = site.posts %}
 {%- if posts.size > 0 -%}
-	<ul>
+	<ul class="post-list">
 		{%- for post in posts -%}
-			<li>
-				<span>{{ post.date | date: "%d.%m.%Y" }}</span>
+			<li class="post">
+				<span class="date">{{ post.date | date: "%d.%m.%Y" }}</span>
 				<a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
 			</li> 
 		{%- endfor -%}
