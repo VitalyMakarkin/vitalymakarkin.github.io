@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "ru" }}">
 	{%- include head.html -%}
-	{%- include header.html -%}
-	{{ content }}
+	<body>
+		{%- include header.html -%}
+		{{ content }}
+	</body>
 </html>

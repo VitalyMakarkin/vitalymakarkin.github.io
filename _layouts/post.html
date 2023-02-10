@@ -1,14 +1,8 @@
 ---
 layout: default
 ---
-<article itemscope itemtype="http://schema.org/BlogPosting">
-	<header>
-		<h1>{{ page.title | escape }}</h1>
-			<div datetime="{{ page.date | date_to_xmlschema }}">
-				{{ page.date | date: "%d.%m.%Y" }}
-			</div>
-	</header>
-	<div>
-		{{ content }}
-	</div>
-</article>
+{{ page.title | escape }}
+<div datetime="{{ page.date | date_to_xmlschema }}">
+	{{ page.date | date: "%d.%m.%Y" }}
+</div>
+{{ content }}
