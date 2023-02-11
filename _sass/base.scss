@@ -1,36 +1,108 @@
 @charset "utf-8";
 
-// Theme colors
-
-$primary-text-color: #eeeeee !default;
-$secondary-text-color: #989898 !default;
 $background-color: #111111 !default;
+$foreground-color: #eeeeee !default;
 
-// Theme font
-
-$font-size:   16px !default;Theme c
-
-// Default tags
+$date-color: #989898 !default;
+$label-color: #989898 !default;
 
 html {
-  font-size: $font-size;
+  height: 100%;
 }
 
 body {
-  color: $primary-text-color;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
   background-color: $background-color;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: $primary-text-color;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
+  color: $foreground-color;
 }
 
 p, h1 {
-  margin: 0;
   padding: 0;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a, a:focus {
+  color: $foreground-color;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  max-width: 720px;
+	margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  font-size: 40px;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header .label {
+  font-size: 20px;
+  color: $label-color;
+}
+
+@media (max-width: 767px) {
+  .header {
+    font-size: 30px;
+  }
+
+  .header .label {
+    font-size: 15px;
+  }
+}
+
+.post-list {
+  padding: 30px;
+  list-style-type: none;
+}
+
+.post-item {
+  padding-bottom: 20px;
+}
+
+.post-item .date {
+  color: $date-color;
+}
+
+.post-item .detail {
+  padding-top: 10px;
+}
+
+.post-item .tag {
+  padding-left: 10px;
+}
+
+.post {
+  padding: 30px;
+}
+
+.post h1 {
+  font-size: 24px;
+}
+
+.post .date {
+  color: $date-color;
+  padding-top: 20px;
+}
+
+.post .content {
+  padding-top: 20px;
 }
