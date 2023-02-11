@@ -1,12 +1,15 @@
 ---
 layout: default
 ---
-<div class="post">
-	<h1>{{ page.title | escape }}</h1>
-	<div class="date" datetime="{{ page.date | date_to_xmlschema }}">
-		{{ page.date | date: "%d.%m.%Y" }}
+<div class="post content">
+	<div class="title">{{ page.title | escape }}</div>
+	<div class="detail">
+		<span class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d.%m.%Y" }}</span>
+		<span>
+			{%- for tag in page.tags -%}
+				<span class="tag">#{{ tag }}</span>
+			{%- endfor -%}
+		</span>
 	</div>
-	<div class="content">
-		{{ content }}
-	</div>
+	{{ content }}
 </div>

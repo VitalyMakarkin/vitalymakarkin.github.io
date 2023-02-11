@@ -11,11 +11,11 @@ html {
 }
 
 body {
-  padding: 0;
   margin: 0;
   min-height: 100%;
   font-family: Tahoma, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 20px;
   background-color: $background-color;
   color: $foreground-color;
 }
@@ -39,17 +39,22 @@ a:hover {
   text-decoration: underline;
 }
 
-.content {
-  max-width: 720px;
+.wrapper {
+  max-width: 800px;
 	margin: 0 auto;
+}
+
+.content {
+  padding: 30px;
 }
 
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 30px 0 30px 0 ;
   font-size: 40px;
+  letter-spacing: 5px;
 }
 
 .header a {
@@ -62,6 +67,10 @@ a:hover {
 }
 
 @media (max-width: 767px) {
+  .content {
+    padding: 15px;
+  }
+
   .header {
     font-size: 30px;
   }
@@ -71,8 +80,12 @@ a:hover {
   }
 }
 
+.date {
+  color: $date-color;
+  margin-right: 10px;
+}
+
 .post-list {
-  padding: 30px;
   list-style-type: none;
 }
 
@@ -80,31 +93,21 @@ a:hover {
   padding-bottom: 20px;
 }
 
-.post-item .date {
-  color: $date-color;
-}
-
 .post-item .detail {
   padding-top: 10px;
 }
 
-.post-item .tag {
-  padding-left: 10px;
+.tag {
+  margin-right: 10px;
+  display:inline-block;
 }
 
-.post {
-  padding: 30px;
+.post .title {
+  font-size: 24px;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
-.post h1 {
-  font-size: 20px;
-}
-
-.post .date {
-  color: $date-color;
-  padding-top: 20px;
-}
-
-.post .content {
-  padding-top: 20px;
+.post .detail {
+  margin-bottom: 20px;
 }
