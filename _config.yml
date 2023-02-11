@@ -1,6 +1,6 @@
 title: 
   author: Vitaly Makarkin
-  caption: Blog
+  label: Blog
 
 plugins:
   - jekyll-feed

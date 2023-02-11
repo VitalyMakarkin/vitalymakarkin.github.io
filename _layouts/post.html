@@ -1,8 +1,12 @@
 ---
 layout: default
 ---
-{{ page.title | escape }}
-<div datetime="{{ page.date | date_to_xmlschema }}">
-	{{ page.date | date: "%d.%m.%Y" }}
+<div class="post">
+	<h1>{{ page.title | escape }}</h1>
+	<div class="date" datetime="{{ page.date | date_to_xmlschema }}">
+		{{ page.date | date: "%d.%m.%Y" }}
+	</div>
+	<div class="content">
+		{{ content }}
+	</div>
 </div>
-{{ content }}

@@ -2,7 +2,9 @@
 <html lang="{{ page.lang | default: "ru" }}">
 	{%- include head.html -%}
 	<body>
-		{%- include header.html -%}
-		{{ content }}
+		<div class="content">
+			{%- include header.html -%}
+			{{ content }}
+		</div>
 	</body>
 </html>

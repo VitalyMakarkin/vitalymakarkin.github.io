@@ -1,6 +1,6 @@
-<header class="site-header">
+<header class="header">
 	<a href="{{ " / " | relative_url }}">
 		{{ site.title.author | escape }}
-		{{ site.title.caption | escape | downcase }}
+		<span class="label">{{ site.title.label | escape | downcase }}</span>
 	</a>
 </header>
