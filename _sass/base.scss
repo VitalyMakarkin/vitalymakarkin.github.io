@@ -3,8 +3,15 @@
 $background-color: #111111 !default;
 $foreground-color: #eeeeee !default;
 
-$date-color: #989898 !default;
+$code-background-color: #111111 !default;
+$code-border-color: #242424 !default;
+
 $label-color: #989898 !default;
+$date-color: #989898 !default;
+$tag-color: #989898 !default;
+
+$base-font-family: Tahoma, sans-serif;
+$code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
 
 html {
   height: 100%;
@@ -20,12 +27,7 @@ body {
   color: $foreground-color;
 }
 
-p, h1 {
-  padding: 0;
-  margin: 0;
-}
-
-ul {
+p, h1, ul, figure, pre, code {
   padding: 0;
   margin: 0;
 }
@@ -92,13 +94,18 @@ a:hover {
 
 .post-item {
   padding-bottom: 20px;
+} 
+
+.post-item .title {
+  margin-bottom: 10px;
 }
 
 .post-item .detail {
-  padding-top: 10px;
+  font-size: 14px;
 }
 
 .tag {
+  color: $tag-color;
   margin-right: 10px;
   display:inline-block;
 }
@@ -111,4 +118,37 @@ a:hover {
 
 .post .detail {
   margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+pre,
+code {
+  font-family: $code-font-family;
+  font-size: 0.9375em;
+  border: 1px solid $code-border-color;
+  border-radius: 3px;
+  background-color: $code-background-color;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.highlight {
+  border-radius: 3px;
+  background: $code-background-color;
 }

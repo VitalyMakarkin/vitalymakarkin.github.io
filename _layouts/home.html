@@ -6,7 +6,9 @@ layout: default
 	<ul class="post-list content">
 		{%- for post in posts -%}
 			<li class="post-item">
-				<b><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></b>
+				<div class="title">
+					<a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+				</div>
 				<div class="detail">
 					<span class="date">{{ post.date | date: "%d.%m.%Y" }}</span>
 					{%- for tag in post.tags -%}
