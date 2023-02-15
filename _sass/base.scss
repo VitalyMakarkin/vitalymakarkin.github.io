@@ -11,6 +11,9 @@ $label-color: #989898 !default;
 $date-color: #989898 !default;
 $tag-color: #989898 !default;
 
+$vertical-spacing: 30px !default;
+$horizontal-spacing: 20px !default;
+
 $base-font-family: Tahoma, sans-serif;
 $code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
 
@@ -52,7 +55,8 @@ a:hover {
 }
 
 .header {
-  padding: 32px 30px 30px 30px;
+  padding: 32px 5px 30px 5px;
+  margin: 0 25px 0 25px;
   font-size: 40px;
   letter-spacing: 5px;
   border-bottom: 1px solid $header-border-color;
@@ -73,10 +77,10 @@ a:hover {
   }
 
   .header {
-    padding: 26px 0 24px 0;
+    padding: 26px 5px 24px 5px;
     font-size: 30px;
     letter-spacing: 2px;
-    margin: 0 15px 0 15px;
+    margin: 0 10px 0 10px;
   }
 
   .header .label {
