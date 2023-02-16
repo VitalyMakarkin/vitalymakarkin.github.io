@@ -1,20 +1,60 @@
 @charset "utf-8";
 
-$background-color: #181818 !default;
-$foreground-color: #eeeeee !default;
+:root {
+  --background-color: #ffffff;
+  --foreground-color: #303030;
 
-$header-border-color: #262626 !default;
-$code-background-color: #202020 !default;
-$code-border-color: #262626 !default;
+  --header-background-color: #181818;
+  --header-title-color: #eeeeee;
+  --header-label-color: #989898;
 
-$label-color: #989898 !default;
-$date-color: #989898 !default;
-$tag-color: #989898 !default;
+  --header-separator-color: #262626;
+
+  --date-color: #707070;
+  --tag-color: #707070;
+
+  --code-background-color: #f8f8f8;
+  --code-border-color: #B0B0B0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { 
+    --background-color: #181818;
+    --foreground-color: #eeeeee;
+
+    --header-background-color: #181818;
+    --header-title-color: #eeeeee;
+    --header-label-color: #989898;
+
+    --header-separator-color: #262626;
+
+    --date-color: #989898;
+    --tag-color: #989898;
+
+    --code-background-color: #202020;
+    --code-border-color: #262626;
+  }
+}
+
+$background-color: var(--background-color);
+$foreground-color: var(--foreground-color);
+
+$header-background-color: var(--header-background-color);
+$header-title-color: var(--header-title-color);
+$header-label-color: var(--header-label-color);
+
+$header-separator-color: var(--header-separator-color);
+
+$date-color: var(--date-color);
+$tag-color: var(--tag-color);
+
+$code-background-color: var(--code-background-color);
+$code-border-color: var(--code-border-color);
 
 $vertical-spacing: 30px !default;
 $horizontal-spacing: 20px !default;
 
-$base-font-family: Tahoma, sans-serif;
+$base-font-family: -apple-system, system-ui, BlinkMacSystemFont, Tahoma, sans-serif;
 $code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
 
 html {
@@ -58,22 +98,33 @@ a:hover {
   padding: 32px 30px 30px 30px;
   font-size: 40px;
   letter-spacing: 5px;
+  background-color: $header-background-color;
 }
 
 .header a {
   text-decoration: none;
+  color: $header-title-color;
 }
 
 .header .label {
   font-size: 20px;
-  color: $label-color;
+  color: $header-label-color;
 }
 
-.separator {
+.header-separator {
   height: 0;
   border: none;
-  border-bottom: 1px solid $header-border-color;
-  margin: 0 25px 0 25px;
+  border-bottom: 1px solid $header-background-color;
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    .header-separator {
+      border-bottom: 1px solid $header-separator-color;
+      margin: 0 13px 0 13px;
+    }
+  }
 }
 
 @media (max-width: 767px) {
