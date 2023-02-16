@@ -115,14 +115,13 @@ header {
   height: 0;
   border: none;
   border-bottom: 1px solid $header-background-color;
-  margin: 0;
+  margin: 0 15px 0 15px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     .header .separator {
       border-bottom: 1px solid $header-separator-color;
-      margin: 0 13px 0 13px;
     }
   }
 }
