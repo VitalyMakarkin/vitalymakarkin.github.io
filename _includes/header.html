@@ -1,7 +1,11 @@
-<header class="header">
-	<a href="{{ "/" | relative_url }}">
-		{{ site.title.author | escape }}
-		<span class="label">{{ site.title.label | escape | downcase }}</span>
-	</a>
+<header>
+	<div class="wrapper header">
+		<div class="content">
+			<a href="{{ "/" | relative_url }}">
+				{{ site.title.author | escape }}
+				<span class="label">{{ site.title.label | escape | downcase }}</span>
+			</a>
+		</div>
+		<hr class="separator">
+	</div>
 </header>
-<hr class="header-separator">

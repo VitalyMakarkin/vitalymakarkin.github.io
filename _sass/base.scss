@@ -7,14 +7,13 @@
   --header-background-color: #181818;
   --header-title-color: #eeeeee;
   --header-label-color: #989898;
-
   --header-separator-color: #262626;
 
   --date-color: #707070;
   --tag-color: #707070;
 
   --code-background-color: #f8f8f8;
-  --code-border-color: #B0B0B0;
+  --code-border-color: #E0E0E0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,7 +24,6 @@
     --header-background-color: #181818;
     --header-title-color: #eeeeee;
     --header-label-color: #989898;
-
     --header-separator-color: #262626;
 
     --date-color: #989898;
@@ -64,7 +62,7 @@ html {
 body {
   margin: 0;
   min-height: 100%;
-  font-family: Tahoma, sans-serif;
+  font-family: $base-font-family;
   font-size: 15px;
   line-height: 20px;
   background-color: $background-color;
@@ -85,6 +83,10 @@ a:hover {
   text-decoration: underline;
 }
 
+header {
+  background-color: $header-background-color;
+}
+
 .wrapper {
   max-width: 800px;
 	margin: 0 auto;
@@ -95,10 +97,8 @@ a:hover {
 }
 
 .header {
-  padding: 32px 30px 30px 30px;
   font-size: 40px;
   letter-spacing: 5px;
-  background-color: $header-background-color;
 }
 
 .header a {
@@ -111,7 +111,7 @@ a:hover {
   color: $header-label-color;
 }
 
-.header-separator {
+.header .separator {
   height: 0;
   border: none;
   border-bottom: 1px solid $header-background-color;
@@ -120,7 +120,7 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    .header-separator {
+    .header .separator {
       border-bottom: 1px solid $header-separator-color;
       margin: 0 13px 0 13px;
     }
@@ -129,11 +129,10 @@ a:hover {
 
 @media (max-width: 767px) {
   .content {
-    padding: 24px 15px 24px 15px; 
+    padding: 26px 15px 24px 15px; 
   }
 
   .header {
-    padding: 26px 15px 24px 15px;
     font-size: 30px;
     letter-spacing: 2px;
   }
