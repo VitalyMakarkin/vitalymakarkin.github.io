@@ -149,7 +149,6 @@ val thirdDevice = DeviceBuilder()
 
 print(thirdDevice)
 
-
 val fourthDevice = DeviceBuilder()
     .setName("Air Pods")
     .setTotalWeight(0.042F)
