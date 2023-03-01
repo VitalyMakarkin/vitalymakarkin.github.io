@@ -4,91 +4,17 @@ title: "Паттерн проектирования - Builder. Часть 1"
 date: 2023-02-26 12:00:00 +0300
 tags: [pattern,kotlin]
 ---
-[Статья в разработке]\
+Часто в работе приходится сталкиваться с различными подходами программирования. Паттерн Builder, он же Строитель, один из наиболее используемых. С его помощью можно эффективно создавать объекты со специфичной конфигурацией. Именно поэтому этот паттерн часто используется для создания объектов конфигурации.\
 \
-Часто в работе приходится сталкиваться с различными подходами программирования. Паттерн Builder, он же Строитель, один из наиболее используемых. С его помощью можно эффективно создавать объекты со специфичной конфигурацией. Именно поэтому этот паттерн часто испоьзуется для создания объектов конфигурации.\
-\
-Простой случай на примере создания экземпляра класса Device:
+Пример:
 
-{% highlight kotlin %}
-val device = DeviceBuilder()
-    .setName("Notebook")
-    .setWeight(1.5F)
-    .setSize(13.3F)
-    .build()
-{% endhighlight %}
-
-Здесь описано некое устройство с наименованием Notebook, размером 13.3 дюймов и весом 1.5 кг.\
-\
-Реализация класса данных Device:
-
-{% highlight kotlin %}
-class Device {
-
-    var name: String = ""
-    var weight: Float = 0F
-    var size: Float = 0F
-
-    override fun toString(): String {
-        return "$name - weight: $weight, size: $size"
-    }
-}
-{% endhighlight %}
-
-Реализация класса-строителя DeviceBuilder:
-
-{% highlight kotlin %}
-class DeviceBuilder {
-
-    private var name: String = ""
-    private var weight: Float = 0F
-    private var size: Float = 0F
-
-    fun setName(value: String): DeviceBuilder {
-        name = value
-        return this
-    }
-
-    fun setWeight(value: Float): DeviceBuilder {
-        weight = value
-        return this
-    }
-
-    fun setSize(value: Float): DeviceBuilder {
-        size = value
-        return this
-    }
-
-    fun build(): Device {
-        val device = Device()
-        device.name = name
-        device.weight = weight
-        device.size = size
-        return device
-    }
-}
-{% endhighlight %}
-
-Вывод результата работы программы, переопределив ранее метод toString у класса Device:
-
-{% highlight kotlin %}
-print(notebook)
-{% endhighlight %}
-
-Результат:
-
-{% highlight kotlin %}
-Notebook - weight: 1.5, size: 13.3
-{% endhighlight %}
-
-Паттерн реализован, однако он не расскрывает свои преимущества.\
-\
-Расширенный вариант:
+Необходимо создать объект, который представляет собой реальное физическое устройство с определенными характеристиками.
+Такое устройство удобно описать с помощью класса Device:
 
 {% highlight kotlin %}
 data class Device(
     val name: String,
-    val totalWeight: Float,
+    val totalWeight: Float = 0F,
     val screenSize: Float? = null
 ) {
 
@@ -97,6 +23,17 @@ data class Device(
         .toString()
 }
 {% endhighlight %}
+
+Класс обладает всего тремя свойствами:
+1. name - наименование;
+2. totalWeight - общий вес;
+3. screenSize - размер экрана.
+
+Однако, не исключено, что этот класс может приобрести десяток, а то и сотню других новых свойств,
+часть из которых может быть определено по умолчанию или являться опциональными.\
+Переопределенный метод toString() сразу предпологает возможное отсутсвие свойства screenSize.\
+\
+Для удобства создания экземляров Device определяется класс DeviceBuilder:
 
 {% highlight kotlin %}
 class DeviceBuilder {
@@ -124,6 +61,11 @@ class DeviceBuilder {
     }
 }
 {% endhighlight %}
+
+Метод build() включает в себя немного бизнес-логики, т.е. предполагает обязательное задание свойства 'name' (имени устройства) , 
+в противном случае устройство не будет создано.\
+\
+Теперь создание устройств управляется простой конфигурацией:
 
 {% highlight kotlin %}
 val firstDevice = DeviceBuilder()
@@ -157,7 +99,7 @@ val fourthDevice = DeviceBuilder()
 print(fourthDevice)
 {% endhighlight %}
 
-Результат:
+В результате создаются устройства только с возможными для них характеристиками:
 
 {% highlight kotlin %}
 Macbook Air - total weight: 1.29, screen size: 13.3 
