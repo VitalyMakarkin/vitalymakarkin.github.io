@@ -31,7 +31,7 @@ fun findLetter(a: String, b: String): Char {
 Из условия можно понять, что одна из букв будет встречаться чаще остальных. Это можно определить подсчитав сколько раз встречается та или иная буква.
 
 {% highlight kotlin %}
-fun findTheDifference(a: String, b: String): Char {
+fun findLetter(a: String, b: String): Char {
     // Подсчет букв в a
     val aMap = mutableMapOf<Char, Int>()
     a.forEach { char ->
