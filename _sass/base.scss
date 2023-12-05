@@ -93,11 +93,11 @@ header {
 }
 
 .content {
-  padding: 30px;
+  padding: 18px 30px 18px 30px;
 }
 
 .header {
-  font-size: 40px;
+  font-size: 20px;
   letter-spacing: 5px;
 }
 
@@ -107,7 +107,7 @@ header {
 }
 
 .header .label {
-  font-size: 20px;
+  font-size: 14px;
   color: $header-label-color;
 }
 
@@ -128,16 +128,16 @@ header {
 
 @media (max-width: 767px) {
   .content {
-    padding: 26px 15px 24px 15px; 
+    padding: 18px 15px 16px 15px; 
   }
 
   .header {
-    font-size: 30px;
+    font-size: 20px;
     letter-spacing: 2px;
   }
 
   .header .label {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .separator {
